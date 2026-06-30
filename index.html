@@ -157,6 +157,98 @@
             gap: 8px;
         }
 
+        /* Projects Section */
+        .projects-section {
+            padding: 100px 50px;
+            background-color: #0b0d14;
+        }
+
+        .projects-title {
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(to right, #ff7beb, #4ba3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #1a1f35 0%, #0f111a 100%);
+            border: 2px solid #1f263b;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #4ba3ff;
+            box-shadow: 0 10px 40px rgba(75, 163, 255, 0.2);
+        }
+
+        .project-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .project-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .project-card .tagline {
+            font-size: 16px;
+            color: #a0aec0;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            font-size: 15px;
+            color: #cbd5e0;
+            line-height: 1.6;
+        }
+
+        .project-card .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #4ba3ff;
+            color: #101524;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+            margin-top: 10px;
+        }
+
+        .project-card .btn:hover {
+            opacity: 0.9;
+        }
+
         /* Portfolio Brands Section */
         .portfolio-section {
             background-color: #0b0d14;
@@ -472,6 +564,10 @@
                 height: 100px;
             }
 
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
             .contact-section {
                 grid-template-columns: 1fr;
             }
@@ -498,6 +594,7 @@
         </div>
         <nav>
             <a href="#about">About</a>
+            <a href="#projects">Projects</a>
             <a href="#services">Services</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contacts">Contacts</a>
@@ -521,8 +618,8 @@
     <section class="intro-section">
         <div class="intro-box">
             <p>We provide innovative digital solutions tailored to your business needs.</p>
-            <a href="#services" class="services-link">
-                Explore Services <i class="fas fa-arrow-right"></i>
+            <a href="#projects" class="services-link">
+                View Our Projects <i class="fas fa-arrow-right"></i>
             </a>
         </div>
         <div class="intro-box">
@@ -533,15 +630,36 @@
         </div>
     </section>
 
-    <!-- Portfolio Brands Section -->
-    <section class="portfolio-section">
-        <div class="brand-block">
-            <div class="brand-logo">DIGITAL INNOVATION</div>
-            <div class="brand-tagline">Creating Tomorrow's Solutions Today</div>
-        </div>
-        <div class="brand-block">
-            <div class="books-god">PREMIUM</div>
-            <div class="books-god-tag">QUALITY ASSURED</div>
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <h2 class="projects-title">Our Amazing Projects</h2>
+        <div class="projects-grid">
+            <!-- HR4 Creation Project -->
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/Hinayrajchouhan/hinape/main/logo.png" alt="HR4 Creation" class="project-logo">
+                <h3>HR4 Creation</h3>
+                <p class="tagline">Clear vision for your brand</p>
+                <p>A professional digital agency focused on providing innovative solutions for businesses. Specializing in web development, UI/UX design, digital marketing, and brand strategy.</p>
+                <a href="#contacts" class="btn">Learn More</a>
+            </div>
+
+            <!-- Books God Project -->
+            <div class="project-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='60' font-weight='bold' fill='url(%23grad1)'%3E📚%3C/text%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234ba3ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4af37;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" alt="Books God" class="project-logo">
+                <h3>Books God</h3>
+                <p class="tagline">Read • Grow • Succeed</p>
+                <p>An educational platform dedicated to empowering learners through books and knowledge. Helping people read, grow, and succeed in their personal and professional journeys.</p>
+                <a href="#contacts" class="btn">Discover More</a>
+            </div>
+
+            <!-- Artificial X Project -->
+            <div class="project-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ctext x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='60' font-weight='bold' fill='url(%23grad2)'%3E🤖%3C/text%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff7beb;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%234ba3ff;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" alt="Artificial X" class="project-logo">
+                <h3>Artificial X</h3>
+                <p class="tagline">Next-Generation AI Solutions</p>
+                <p>Cutting-edge artificial intelligence platform designed to revolutionize business processes. Leveraging AI technology to provide intelligent solutions for modern challenges.</p>
+                <a href="#contacts" class="btn">Explore Now</a>
+            </div>
         </div>
     </section>
 
