@@ -43,6 +43,18 @@
             border-bottom: 1px solid #1f263b;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
         .logo {
             font-weight: bold;
             font-size: 24px;
@@ -72,17 +84,41 @@
         .hero {
             height: 70vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #1b2035 0%, #0f111a 100%);
             text-align: center;
             border-bottom: 1px solid #1f263b;
+            gap: 40px;
+        }
+
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .hero h1 {
             font-size: 56px;
             font-weight: 700;
             letter-spacing: 2px;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
+            color: #a0aec0;
+            font-weight: 500;
         }
 
         /* Intro Boxes Section */
@@ -415,6 +451,11 @@
                 font-size: 36px;
             }
 
+            .hero-logo {
+                width: 100px;
+                height: 100px;
+            }
+
             .contact-section {
                 grid-template-columns: 1fr;
             }
@@ -435,7 +476,10 @@
 
     <!-- Header / Navigation Bar -->
     <header>
-        <div class="logo">HR4 Creation</div>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/Hinayrajchouhan/hinape/main/logo.png" alt="HR4 Creation Logo" class="logo-image">
+            <div class="logo">HR4 Creation</div>
+        </div>
         <nav>
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -452,7 +496,9 @@
 
     <!-- Hero Section -->
     <section class="hero" id="about">
+        <img src="https://raw.githubusercontent.com/Hinayrajchouhan/hinape/main/logo.png" alt="HR4 Creation Logo" class="hero-logo">
         <h1>HR4 Creation</h1>
+        <p class="hero-tagline">Clear vision for your brand</p>
     </section>
 
     <!-- Intro Column Blocks -->
