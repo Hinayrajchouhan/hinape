@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR4 Creation - Professional Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f111a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navbar Style */
+        header {
+            background-color: #121624;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1f263b;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1b2035 0%, #0f111a 100%);
+            text-align: center;
+            border-bottom: 1px solid #1f263b;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Intro Boxes Section */
+        .intro-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #2557a7 0%, #1a3c75 100%);
+            padding: 40px 30px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+        }
+
+        .intro-box:nth-child(2) {
+            background: linear-gradient(135deg, #4fa3d1 0%, #29688a 100%);
+        }
+
+        .intro-box p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .intro-box .services-link {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Portfolio Brands Section */
+        .portfolio-section {
+            background-color: #0b0d14;
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .brand-block {
+            margin-bottom: 100px;
+        }
+
+        .brand-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .brand-logo {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff7beb, #4ba3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-tagline {
+            font-size: 20px;
+            color: #a0aec0;
+        }
+
+        .books-god {
+            border: 2px solid #d4af37;
+            padding: 20px 40px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #d4af37;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .books-god-tag {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
+        /* Services Grid Section */
+        .services-grid-section {
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 44px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #4ba3ff;
+            color: #101524;
+            padding: 40px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .service-card .arrow-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #101524;
+        }
+
+        /* Testimonials Section */
+        .testimonial-section {
+            background-color: #121624;
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .author-name {
+            font-size: 18px;
+            color: #a0aec0;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        .testimonial-text {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: #a0aec0;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+        }
+
+        .contact-item i {
+            color: #4ba3ff;
+            font-size: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background-color: #ffffff;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #000000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: #4ba3ff;
+            color: #101524;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #0b0d14;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1f263b;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+
+        footer .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        footer .footer-socials a {
+            background-color: #2b5998;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        footer .footer-socials a:hover {
+            background-color: #4ba3ff;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .social-icons {
+                margin-left: 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header>
+        <div class="logo">HR4 Creation</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contacts">Contacts</a>
+            <div class="social-icons">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <h1>HR4 Creation</h1>
+    </section>
+
+    <!-- Intro Column Blocks -->
+    <section class="intro-section">
+        <div class="intro-box">
+            <p>We provide innovative digital solutions tailored to your business needs.</p>
+            <a href="#services" class="services-link">
+                Explore Services <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="intro-box">
+            <p>Our team is dedicated to delivering excellence in every project we undertake.</p>
+            <a href="#contacts" class="services-link">
+                Get in Touch <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Portfolio Brands Section -->
+    <section class="portfolio-section">
+        <div class="brand-block">
+            <div class="brand-logo">DIGITAL INNOVATION</div>
+            <div class="brand-tagline">Creating Tomorrow's Solutions Today</div>
+        </div>
+        <div class="brand-block">
+            <div class="books-god">PREMIUM</div>
+            <div class="books-god-tag">QUALITY ASSURED</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-grid-section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="arrow-icon">→</span>
+                <h3>Web Development</h3>
+                <p>Building responsive and dynamic websites tailored to your brand identity and business goals.</p>
+            </div>
+            <div class="service-card">
+                <span class="arrow-icon">→</span>
+                <h3>UI/UX Design</h3>
+                <p>Crafting intuitive user experiences that engage and delight your audience.</p>
+            </div>
+            <div class="service-card">
+                <span class="arrow-icon">→</span>
+                <h3>Digital Marketing</h3>
+                <p>Strategic campaigns to boost your online presence and drive measurable results.</p>
+            </div>
+            <div class="service-card">
+                <span class="arrow-icon">→</span>
+                <h3>Brand Strategy</h3>
+                <p>Developing comprehensive branding strategies to establish your market position.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section" id="testimonials">
+        <div class="testimonial-container">
+            <div class="author-name">— Sarah Johnson, CEO</div>
+            <div class="testimonial-text">
+                "HR4 Creation transformed our digital presence. Their team is professional, creative, and delivered exceptional results. We couldn't be happier!"
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacts">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>Have a question or ready to start your project? We'd love to hear from you.</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Business Street, City, Country</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hello@hr4creation.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button class="submit-btn">Send Message</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2024 HR4 Creation. All rights reserved.</div>
+        <div class="footer-socials">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            // Reset form
+            document.querySelector('.contact-form').reset();
+        });
+    </script>
+
+</body>
+</html>
